@@ -1,0 +1,411 @@
+/*
+ * Main Stylesheet for Exam Platform
+ * Author: Jules
+ * Version: 1.0.0
+ */
+
+/* 1. Global Styles & Variables
+-------------------------------------------------- */
+:root {
+    --primary-color: #007bff;
+    --primary-hover-color: #0056b3;
+    --secondary-color: #6c757d;
+    --success-color: #28a745;
+    --danger-color: #dc3545;
+    --warning-color: #ffc107;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --text-color: #212529;
+    --body-bg: #ffffff;
+    --card-bg: #ffffff;
+    --card-border: #dee2e6;
+    --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --border-radius: 0.25rem;
+    --box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: var(--font-family-sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-color);
+    background-color: var(--body-bg);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) { .container { max-width: 540px; } }
+@media (min-width: 768px) { .container { max-width: 720px; } }
+@media (min-width: 992px) { .container { max-width: 960px; } }
+@media (min-width: 1200px) { .container { max-width: 1140px; } }
+
+
+/* 2. Layout Components (Header, Footer)
+-------------------------------------------------- */
+.site-header {
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--card-border);
+    padding: 1rem 0;
+    margin-bottom: 2rem;
+}
+
+.site-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--dark-color);
+    text-decoration: none;
+}
+
+.site-footer {
+    background-color: var(--light-color);
+    border-top: 1px solid var(--card-border);
+    padding: 1.5rem 0;
+    margin-top: 2rem;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--secondary-color);
+}
+
+
+/* 3. Homepage Styles
+-------------------------------------------------- */
+.page-header {
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    align-items: center;
+}
+
+.toolbar #search-input {
+    flex-grow: 1;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+}
+
+.toolbar #filter-category, .toolbar #filter-difficulty {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    background-color: #fff;
+}
+
+.exam-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .exam-list { grid-template-columns: repeat(2, 1fr); }
+}
+@media (min-width: 992px) {
+    .exam-list { grid-template-columns: repeat(3, 1fr); }
+}
+
+.exam-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.exam-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow);
+    color: var(--text-color);
+}
+
+.exam-card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+}
+
+.exam-card-title {
+    font-size: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--primary-color);
+}
+
+.exam-card-desc {
+    margin-bottom: 1rem;
+    font-size: 0.95rem;
+    color: var(--secondary-color);
+    flex-grow: 1;
+}
+
+.exam-card-footer {
+    padding: 1rem 1.5rem;
+    background-color: var(--light-color);
+    border-top: 1px solid var(--card-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+}
+
+.exam-tags .tag {
+    display: inline-block;
+    padding: 0.25em 0.6em;
+    font-size: 75%;
+    font-weight: 700;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: var(--border-radius);
+    background-color: var(--secondary-color);
+    color: #fff;
+    margin-right: 0.5rem;
+}
+
+.difficulty-badge {
+    padding: 0.25em 0.6em;
+    border-radius: var(--border-radius);
+    color: #fff;
+    font-weight: bold;
+}
+.difficulty-Beginner { background-color: var(--success-color); }
+.difficulty-Intermediate { background-color: var(--warning-color); color: var(--dark-color); }
+.difficulty-Advanced { background-color: var(--danger-color); }
+
+
+/* 4. Exam Page Styles
+-------------------------------------------------- */
+.exam-page-body { background-color: var(--light-color); }
+
+.exam-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.exam-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--card-border);
+}
+
+.exam-title { margin: 0; font-size: 1.5rem; }
+
+#timer {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+#progress-bar-container {
+    width: 100%;
+    height: 10px;
+    background-color: var(--card-border);
+    border-radius: 5px;
+    margin-bottom: 1rem;
+}
+
+#progress-bar {
+    height: 100%;
+    width: 0;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+    transition: width 0.3s ease;
+}
+
+.question-container { min-height: 250px; }
+.question-text { font-size: 1.2rem; font-weight: 500; margin-bottom: 1.5rem; }
+
+.options-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.options-list li { margin-bottom: 1rem; }
+.options-list label {
+    display: block;
+    padding: 1rem;
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.options-list label:hover { background-color: var(--light-color); }
+.options-list input:checked + label {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-hover-color);
+}
+
+.exam-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--card-border);
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    user-select: none;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 0.5rem 1.5rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: var(--border-radius);
+    transition: all 0.15s ease-in-out;
+}
+
+.btn:hover { background-color: var(--primary-hover-color); border-color: var(--primary-hover-color); }
+.btn-secondary { background-color: var(--secondary-color); border-color: var(--secondary-color); }
+.btn-secondary:hover { background-color: #5a6268; border-color: #545b62; }
+.btn-success { background-color: var(--success-color); border-color: var(--success-color); }
+.btn-success:hover { background-color: #218838; border-color: #1e7e34; }
+
+
+/* 5. Results Page Styles
+-------------------------------------------------- */
+.results-summary {
+    text-align: center;
+    padding: 2rem;
+    background-color: var(--light-color);
+    border-radius: var(--border-radius);
+    margin-bottom: 2rem;
+}
+
+.results-summary h1 { margin-top: 0; }
+.score-display { font-size: 4rem; font-weight: bold; margin: 1rem 0; }
+.pass-fail-status { font-size: 1.5rem; font-weight: bold; }
+.status-pass { color: var(--success-color); }
+.status-fail { color: var(--danger-color); }
+
+.results-actions { margin-top: 1.5rem; }
+
+.results-breakdown h2 {
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.review-question {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+}
+
+.review-question.correct { border-left: 5px solid var(--success-color); }
+.review-question.incorrect { border-left: 5px solid var(--danger-color); }
+
+.review-question .options-list label { cursor: default; }
+.review-question .options-list label:hover { background: none; }
+.review-question .options-list input { display: none; }
+
+.review-question .option-correct {
+    background-color: #d4edda;
+    border-color: #c3e6cb;
+}
+.review-question .option-user-incorrect {
+    background-color: #f8d7da;
+    border-color: #f5c6cb;
+    text-decoration: line-through;
+}
+
+.explanation {
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: #e9ecef;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+}
+.explanation strong { color: var(--dark-color); }
+
+
+/* 6. Utilities & Accessibility
+-------------------------------------------------- */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+.hidden { display: none; }
+
+*:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+
+/* 7. Print Styles
+-------------------------------------------------- */
+@media print {
+    body {
+        background-color: #fff;
+        color: #000;
+    }
+    .site-header, .site-footer, .toolbar, .exam-nav, .results-actions {
+        display: none;
+    }
+    .container {
+        max-width: 100%;
+        padding: 0;
+    }
+    .exam-card, .results-summary, .review-question {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+    a { text-decoration: none; color: #000; }
+}

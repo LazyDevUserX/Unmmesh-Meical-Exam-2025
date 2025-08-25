@@ -1,0 +1,12 @@
+{
+  "title": "Advanced JavaScript Concepts",
+  "description": "Test your knowledge of advanced JavaScript topics like closures, promises, and async/await.",
+  "duration": 20,
+  "passingScore": 80,
+  "category": "Web Development",
+  "difficulty": "Intermediate",
+  "tags": ["JavaScript", "ES6", "Async"],
+  "author": "Jules",
+  "created": "2023-10-26",
+  "updated": "2023-10-27"
+}

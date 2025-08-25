@@ -1,0 +1,44 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What is a closure in JavaScript?",
+      "options": [
+        "A function that has no access to its outer scope",
+        "An object that links a function to its lexical environment",
+        "A way to protect variables from being garbage collected",
+        "Both B and C are partially correct"
+      ],
+      "correctAnswer": 3,
+      "explanation": "A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives you access to an outer function's scope from an inner function. This also prevents the outer function's variables from being garbage collected if the inner function is still accessible.",
+      "points": 2
+    },
+    {
+      "id": 2,
+      "type": "true-false",
+      "question": "A JavaScript Promise can be in one of three states: pending, fulfilled, or rejected.",
+      "options": [
+        "True",
+        "False"
+      ],
+      "correctAnswer": 0,
+      "explanation": "A Promise is in one of these states: pending (initial state, neither fulfilled nor rejected), fulfilled (meaning that the operation completed successfully), or rejected (meaning that the operation failed).",
+      "points": 1
+    },
+    {
+      "id": 3,
+      "type": "multiple-answer",
+      "question": "Which of the following are new features introduced in ECMAScript 6 (ES6)?",
+      "options": [
+        "Arrow Functions",
+        "Promises",
+        "let and const keywords",
+        "The 'var' keyword"
+      ],
+      "correctAnswers": [0, 1, 2],
+      "explanation": "Arrow functions, native Promises, and the block-scoped `let` and `const` keywords were all significant features introduced in ES6. The `var` keyword has been part of JavaScript since its inception.",
+      "points": 2
+    }
+  ]
+}

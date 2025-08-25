@@ -1,0 +1,41 @@
+---
+layout: exam
+title: Exam in Progress
+---
+
+<div id="exam-container" class="exam-container">
+    <!-- This will be shown while the exam data is loading -->
+    <div id="exam-loading">
+        <h2>Loading Exam...</h2>
+        <p>Please wait while we prepare your exam.</p>
+    </div>
+
+    <!-- This will be shown once the exam is loaded -->
+    <div id="exam-content" class="hidden">
+        <header class="exam-header">
+            <h1 id="exam-title" class="exam-title"></h1>
+            <div id="timer" aria-live="polite">--:--</div>
+        </header>
+
+        <div id="progress-bar-container">
+            <div id="progress-bar"></div>
+        </div>
+        <p id="progress-text" class="sr-only"></p>
+
+        <div id="question-container">
+            <h2 id="question-text" class="question-text"></h2>
+            <ul id="options-list" class="options-list" role="radiogroup">
+                <!-- Options will be dynamically inserted here -->
+            </ul>
+        </div>
+
+        <nav class="exam-nav">
+            <button id="flag-btn" class="btn btn-secondary">Flag for Review</button>
+            <div>
+                <button id="prev-btn" class="btn">Previous</button>
+                <button id="next-btn" class="btn">Next</button>
+                <button id="submit-btn" class="btn btn-success">Submit Exam</button>
+            </div>
+        </nav>
+    </div>
+</div>

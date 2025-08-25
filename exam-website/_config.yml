@@ -1,0 +1,21 @@
+title: Exam Platform
+description: "Take exams and test your knowledge. This site is dynamically updated when new exams are added."
+baseurl: "" # For GitHub Pages, this should be /<repository-name>
+url: "" # For GitHub Pages, this should be https://<username>.github.io
+
+# Build settings
+markdown: kramdown
+plugins:
+  - jekyll-feed
+
+# We need to include the _exams directory so Jekyll copies the JSON files.
+include:
+  - "_exams"
+
+# Exclude from processing.
+exclude:
+  - .sass-cache/
+  - .jekyll-cache/
+  - gemfiles/
+  - Gemfile
+  - Gemfile.lock

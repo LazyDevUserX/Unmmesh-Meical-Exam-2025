@@ -1,0 +1,38 @@
+---
+layout: default
+title: Exam Results
+---
+
+<div id="results-container">
+    <!-- This will be shown while results are being calculated -->
+    <div id="results-loading">
+        <h2>Calculating Results...</h2>
+        <p>Please wait a moment.</p>
+    </div>
+
+    <!-- This will be shown if there are no results to display -->
+    <div id="results-error" class="hidden">
+        <h2>No Results Found</h2>
+        <p>We couldn't find any exam results to display. You may need to complete an exam first.</p>
+        <a href="{{ '/' | relative_url }}" class="btn">Back to Homepage</a>
+    </div>
+
+    <!-- The main results content, hidden by default -->
+    <div id="results-content" class="hidden">
+        <div id="results-summary" class="results-summary">
+            <h1 id="results-exam-title"></h1>
+            <p>Your Score:</p>
+            <div id="score-display" class="score-display"></div>
+            <p id="pass-fail-status" class="pass-fail-status"></p>
+            <div id="results-actions" class="results-actions">
+                <a href="{{ '/' | relative_url }}" class="btn btn-secondary">Take Another Exam</a>
+                <button id="print-results-btn" class="btn">Print Results</button>
+            </div>
+        </div>
+
+        <div id="results-breakdown" class="results-breakdown">
+            <h2>Answer Review</h2>
+            <!-- Detailed question reviews will be inserted here by main.js -->
+        </div>
+    </div>
+</div>

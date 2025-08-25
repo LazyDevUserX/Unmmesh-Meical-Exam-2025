@@ -1,0 +1,29 @@
+---
+layout: default
+title: Home
+description: "Browse and select from a wide range of exams to test your knowledge."
+---
+
+<div class="page-header">
+    <h1>Available Exams</h1>
+    <p>Choose an exam from the list below to get started. Use the search and filters to find the perfect exam for you.</p>
+</div>
+
+<div class="toolbar">
+    <input type="text" id="search-input" placeholder="Search for exams..." aria-label="Search for exams">
+    <select id="filter-category" aria-label="Filter by category">
+        <option value="">All Categories</option>
+    </select>
+    <select id="filter-difficulty" aria-label="Filter by difficulty">
+        <option value="">All Difficulties</option>
+    </select>
+</div>
+
+<div id="exam-list" class="exam-list">
+    <!-- Exam cards will be dynamically inserted here by main.js -->
+    <p id="loading-exams">Loading exams...</p>
+</div>
+
+<div id="no-results" class="hidden">
+    <p>No exams match your criteria. Please try a different search or filter.</p>
+</div>

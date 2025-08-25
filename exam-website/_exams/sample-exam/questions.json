@@ -1,0 +1,41 @@
+{
+  "questions": [
+    {
+      "id": 1,
+      "type": "multiple-choice",
+      "question": "What does HTML stand for?",
+      "options": [
+        "Hyper Text Markup Language",
+        "High Tech Modern Language",
+        "Hyperlink and Text Markup Language",
+        "Home Tool Markup Language"
+      ],
+      "correctAnswer": 0,
+      "explanation": "HTML stands for Hyper Text Markup Language. It's the standard markup language for documents designed to be displayed in a web browser.",
+      "points": 1
+    },
+    {
+      "id": 2,
+      "type": "multiple-answer",
+      "question": "Which of the following are valid CSS selectors?",
+      "options": [
+        ".class-selector",
+        "#id-selector",
+        "tag-selector",
+        "@at-selector"
+      ],
+      "correctAnswers": [0, 1, 2],
+      "explanation": "Class selectors (.), ID selectors (#), and tag selectors (e.g., 'p') are all valid. The '@' symbol is used for at-rules like @media or @keyframes, not for selecting elements.",
+      "points": 2
+    },
+    {
+      "id": 3,
+      "type": "true-false",
+      "question": "In JavaScript, `null` is the same as `undefined`.",
+      "options": ["True", "False"],
+      "correctAnswer": 1,
+      "explanation": "`null` is an assignment value, meaning a variable has been explicitly set to have no value. `undefined` means a variable has been declared but not assigned a value. They are not the same, although they are both falsy.",
+      "points": 1
+    }
+  ]
+}
