@@ -2,11 +2,14 @@
 layout: null
 ---
 [
-  {% assign exam_files = site.static_files | where_exp: "file", "file.path contains '/_exams/' and file.path contains 'metadata.json'" %}
-  {% for file in exam_files %}
-    {
-      "id": "{{ file.path | remove_first: '/_exams/' | remove: '/metadata.json' }}"
-    }
-    {% unless forloop.last %},{% endunless %}
+  {% assign first = true %}
+  {% for file in site.static_files %}
+    {% if file.path contains '/_exams/' and file.path contains 'metadata.json' %}
+      {% unless first %},{% endunless %}
+      {
+        "id": "{{ file.path | remove_first: '/_exams/' | remove: '/metadata.json' }}"
+      }
+      {% assign first = false %}
+    {% endif %}
   {% endfor %}
 ]
